@@ -34,19 +34,19 @@ function classesCanSkip(present, total){
   return raw > 0 ? raw : 0;
 }
 
-async function loadStudents(){
+function loadStudents(){
   try{
-    const res = await window.storage.get(STORAGE_KEY, false);
-    students = res && res.value ? JSON.parse(res.value) : [];
+    const raw = localStorage.getItem(STORAGE_KEY);
+    students = raw ? JSON.parse(raw) : [];
   }catch(e){
     students = [];
   }
   render();
 }
 
-async function saveStudents(){
+function saveStudents(){
   try{
-    await window.storage.set(STORAGE_KEY, JSON.stringify(students), false);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(students));
   }catch(e){
     console.error('Could not save', e);
   }
