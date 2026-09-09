@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Attendance Tracker</h1>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <form id="addForm" class="add-form">
+    <input type="text" id="nameInput" placeholder="Add student name" required>
+    <button type="submit">Add</button>
+  </form>
+
+  <table class="roster">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Present</th>
+        <th>%</th>
+        <th>Status</th>
+        <th>Mark today</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="rosterBody"></tbody>
+  </table>
+
+  <section id="detail" class="detail" hidden></section>
+
+  <section class="tips">
+    <h2>Ways to improve attendance</h2>
+    <ul>
+      <li><strong>Streak tracking</strong> — consecutive present days, shown per student.</li>
+      <li><strong>Recovery target</strong> — exact number of classes to attend in a row to get back to 75%.</li>
+      <li><strong>Skip budget</strong> — how many classes can still be missed without dropping below 75%.</li>
+      <li><strong>Buddy check-ins</strong> — pair low-attendance students with a classmate who reminds them.</li>
+      <li><strong>Weekly digest</strong> — send anyone under 80% to a mentor or parent early.</li>
+      <li><strong>Reason tagging</strong> — log why a class was missed to spot fixable patterns.</li>
+    </ul>
+  </section>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
