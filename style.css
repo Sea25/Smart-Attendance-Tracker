@@ -1,0 +1,245 @@
+:root{
+  --ink:#1a1a1a;
+  --dim:#6b6b6b;
+  --line:#e4e4e4;
+  --bg:#ffffff;
+  --panel:#fafafa;
+  --high:#2f7d4f;
+  --moderate:#b8860b;
+  --low:#c0392b;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size:15px;
+  line-height:1.5;
+}
+
+.wrap{
+  max-width:760px;
+  margin:0 auto;
+  padding:40px 20px 80px;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:28px;
+}
+
+h1{
+  font-size:1.4rem;
+  font-weight:600;
+  margin:0;
+}
+
+.stats{
+  display:flex;
+  gap:18px;
+  font-size:0.85rem;
+  color:var(--dim);
+}
+
+.stats span{
+  font-weight:600;
+  color:var(--ink);
+}
+
+.add-form{
+  display:flex;
+  gap:8px;
+  margin-bottom:24px;
+}
+
+.add-form input{
+  flex:1;
+  padding:8px 10px;
+  border:1px solid var(--line);
+  border-radius:4px;
+  font-size:0.9rem;
+  font-family:inherit;
+}
+
+.add-form button, .btn{
+  padding:8px 14px;
+  border:1px solid var(--ink);
+  background:var(--ink);
+  color:#fff;
+  border-radius:4px;
+  font-size:0.85rem;
+  cursor:pointer;
+  font-family:inherit;
+}
+
+.roster{
+  width:100%;
+  border-collapse:collapse;
+  margin-bottom:16px;
+}
+
+.roster th{
+  text-align:left;
+  font-size:0.72rem;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  color:var(--dim);
+  font-weight:600;
+  padding:0 8px 8px;
+  border-bottom:1px solid var(--line);
+}
+
+.roster td{
+  padding:10px 8px;
+  border-bottom:1px solid var(--line);
+  vertical-align:middle;
+  font-size:0.9rem;
+}
+
+.roster tr{cursor:pointer;}
+.roster tr:hover td{background:var(--panel);}
+.roster tr.selected td{background:#f1f1f1;}
+
+.name-cell .streak{
+  display:block;
+  font-size:0.72rem;
+  color:var(--dim);
+  font-weight:400;
+}
+
+.pct{font-variant-numeric:tabular-nums; font-weight:600;}
+
+.badge{
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:3px;
+  font-size:0.72rem;
+  font-weight:600;
+  color:#fff;
+}
+.badge.high{background:var(--high);}
+.badge.moderate{background:var(--moderate);}
+.badge.low{background:var(--low);}
+
+.warn{color:var(--low); font-size:0.8rem; margin-left:4px;}
+
+.mark-actions{display:flex; gap:6px;}
+
+.mark-actions button{
+  padding:5px 9px;
+  font-size:0.75rem;
+  border-radius:4px;
+  border:1px solid var(--line);
+  background:#fff;
+  cursor:pointer;
+  font-family:inherit;
+}
+.mark-actions button.present{border-color:var(--high); color:var(--high);}
+.mark-actions button.absent{border-color:var(--low); color:var(--low);}
+
+.icon-btn{
+  border:none;
+  background:none;
+  color:var(--dim);
+  cursor:pointer;
+  font-size:0.85rem;
+  padding:2px 4px;
+}
+.icon-btn:hover{color:var(--ink);}
+
+.empty{
+  text-align:center;
+  color:var(--dim);
+  font-style:italic;
+  padding:24px 0;
+}
+
+.detail{
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:18px 20px;
+  margin:20px 0 36px;
+  background:var(--panel);
+}
+
+.detail h3{
+  margin:0 0 6px;
+  font-size:1.1rem;
+}
+
+.detail .badge{margin-right:6px;}
+
+.detail-note{
+  font-size:0.85rem;
+  color:var(--dim);
+  margin-top:6px;
+}
+
+.calc-row{
+  display:flex;
+  gap:14px;
+  margin-top:16px;
+  flex-wrap:wrap;
+}
+
+.calc-card{
+  flex:1;
+  min-width:180px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:5px;
+  padding:12px 14px;
+}
+
+.calc-card .val{
+  font-size:1.3rem;
+  font-weight:700;
+}
+
+.calc-card .lbl{
+  font-size:0.75rem;
+  color:var(--dim);
+  margin-top:2px;
+}
+
+.detail ul{
+  margin:14px 0 0;
+  padding-left:18px;
+  font-size:0.86rem;
+  color:var(--dim);
+  line-height:1.6;
+}
+
+.tips{
+  border-top:1px solid var(--line);
+  padding-top:20px;
+}
+
+.tips h2{
+  font-size:1rem;
+  font-weight:600;
+  margin:0 0 10px;
+}
+
+.tips ul{
+  margin:0;
+  padding-left:18px;
+  font-size:0.86rem;
+  color:var(--dim);
+  line-height:1.7;
+}
+
+@media (max-width:560px){
+  .roster thead{display:none;}
+  .roster, .roster tbody, .roster tr, .roster td{display:block; width:100%;}
+  .roster tr{border-bottom:1px solid var(--line); padding:8px 0;}
+  .roster td{display:flex; justify-content:space-between; border:none; padding:3px 0;}
+  .roster td:before{content:attr(data-label); font-size:0.72rem; color:var(--dim);}
+}
